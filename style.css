@@ -302,6 +302,9 @@ svg {
 
 .social-links {
     font-size: 0; /* Removes white space gap */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .link-btn {
