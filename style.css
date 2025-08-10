@@ -1,0 +1,324 @@
+body {
+    margin: 0;
+    font-family: Arial, Sans-serif;
+    align-self: center;
+    background-color: white;
+}
+
+.img_deg {
+    float: right;
+    width: 20%; 
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.content {
+    max-width: 1200px;           /* width of main strip */
+    margin: 0 auto;             /* center horizontally */
+    background-color: hsl(216, 56%, 91%);    
+    padding: 20px;
+    border-left: 2px solid #ccc; /* left divider line */
+    border-right: 2px solid #ccc; /* right divider line */
+    min-height: 100vh;          /* make dividers span full height */
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+}
+
+.title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+.Description {
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+}
+
+.section_header {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Responsive: remove lines and stretch content */
+@media (max-width: 950px) {
+    .content {
+        max-width: 100%;
+        border-left: none;
+        border-right: none;
+        padding: 15px;
+    }
+
+    .img_deg {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+        width: 15%; /* bigger on small screens */
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin-bottom:20px;
+    align-items: center;
+}
+
+.button {
+    background-color: rgb(50, 165, 204);
+}
+
+.clear {
+    clear: both;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 per row */
+    gap: 20px; /* Space between cards */
+    max-width: 1100px;
+    margin: 0 auto; /* Center the grid */
+    padding: 20px;
+}
+
+.card {
+    display: flex;                 /* make card a flex container */
+    flex-direction: column;        /* stack children vertically */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 100%;                 /* make cards all the same height in grid */
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;  /* or use contain if preferred */
+    display: block;
+    flex-shrink: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .card img {
+        height: 150px;
+    }
+}
+
+.card h3 {
+    margin: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.8rem); /* scales between 16px and 28.8px */
+    flex-shrink: 0;
+}
+
+.card p {
+    margin: 10px;
+    font-size: clamp(0.8rem, 2vw, 1.1rem); /* scales between 12.8px and 17.6px */
+    flex-grow: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* On small screens, stack vertically */
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr; /* One per row */
+    }
+}
+
+.skills {
+    margin: 10px;
+    display: flex;
+    gap: 8px; /* space between skill tags */
+    flex-wrap: wrap; /* allows wrapping if needed */
+    margin-top: auto; /* THIS pushes .skills to bottom */
+}
+
+.skill {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    align-self: bottom;
+}
+
+@media (max-width: 600px) {
+    .skills {
+        font-size: 0.8rem;
+        justify-content: center; /* Center skills on small screens */
+    }
+}
+
+/* Individual skill colors */
+.skill.html {
+    background-color: #e44d26; /* HTML orange */
+}
+
+.skill.css {
+    background-color: #264de4; /* CSS blue */
+}
+
+.skill.js {
+    background-color: #f7df1e; /* JS yellow */
+    color: black;
+}
+
+.skill.node     { 
+    background-color: #6CC24A; /* Node.js green */
+    color: black;
+}   
+.skill.cpp      { 
+    background-color: #044F88; /* C++ blue */
+}   
+.skill.c        { 
+    background-color: #00599C; /* C deep blue */
+}   
+.skill.mysql    { 
+    background-color: #00758F; /* MySQL teal-blue */
+}   
+.skill.sql      { 
+    background-color: #003543; /* SQL dark azure */
+}   
+.skill.csharp   { 
+    background-color: #68217A; /* C# purple */
+}   
+.skill.python {
+    background-color: #3776AB; /* Python blue */
+}
+.skill.basic {
+    background-color: rgb(243, 204, 242);
+    color: black;
+}
+.skill.sharepoint {
+    background-color: rgb(13, 168, 13);
+}
+
+.cert-card {
+    display: flex;
+    align-items: stretch;      /* stretch to same height */
+    justify-content: space-between;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px 0;
+    background-color: white;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+  
+  .cert-text-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 250px;
+    position: relative;
+}
+  
+  /* Push skills to bottom */
+  .skills {
+    margin-top: auto;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+  
+  /* Date below description but above skills */
+  .cert-date {
+    margin-top: 10px;
+    color: #666;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    white-space: nowrap;
+}
+  
+  .cert-title {
+    margin: 0 0 8px;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #222;
+}
+  
+  .cert-description {
+    margin: 0;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    color: #555;
+}
+  
+  .cert-image {
+    flex-shrink: 0;
+    width: 200px;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    align-self: center;
+}
+  
+  /* Skill tags (reuse your existing skill styles for color etc) */
+  .skill {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap;
+    user-select: none;
+}
+  
+  /* Responsive - stack vertically on small screens */
+  @media (max-width: 600px) {
+    .cert-card {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .cert-image {
+      width: 100%;
+      max-width: 300px;
+      align-self: center;
+    }
+  
+    .cert-text-block {
+      min-width: auto;
+    }
+  
+    .skills {
+      justify-content: flex-start;
+    }
+}
+
+svg {
+    width: 5.0rem;
+    height: auto;
+}
+
+.social-links {
+    font-size: 0; /* Removes white space gap */
+}
+
+.link-btn {
+    font-size: 16px; /* Reset font-size for the buttons themselves */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25em;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+.link-btn svg {
+    display: block; /* Prevents extra gaps */
+}
+.link-btn:focus {
+    outline: none;
+}
+
