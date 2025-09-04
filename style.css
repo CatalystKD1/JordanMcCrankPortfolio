@@ -201,6 +201,10 @@ body {
 .skill.sharepoint {
     background-color: rgb(13, 168, 13);
 }
+.skill.react {
+    background-color: #61DAFB; /* React blue */
+    color: black;
+}
 
 .cert-card {
     display: flex;
